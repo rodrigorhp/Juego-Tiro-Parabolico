@@ -68,16 +68,17 @@ def move():
 
     #Checa si la bola esta tocando un objetivo y crea la lista de los objetivos validos
     for target in dupe:
+        #Reposiciona los objeetivos que el usuario no logre disparar
+        if not inside(target):
+            y = randrange(-150, 150)
+            #Le asigna su posicion
+            target = vector(200, y)
+            targets.append(target)   
         if abs(target - ball) > 13:
             targets.append(target)
 
     #Dibuja los objetos
-    draw()
-
-    #Checa si un objetivo salio del juego, y termina el juego
-    for target in targets:
-        if not inside(target):
-            return
+    draw() 
 
     #Velocidad del juego
     ontimer(move, 50)
