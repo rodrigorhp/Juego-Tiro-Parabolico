@@ -17,8 +17,8 @@ def tap(x, y):
     if not inside(ball):
         ball.x = -199
         ball.y = -199
-        speed.x = (x + 200) / 25
-        speed.y = (y + 200) / 25
+        speed.x = (x + 200) / 10
+        speed.y = (y + 200) / 10
 
 #Recibe coordenadas del objeto y revisa si esta dentro del juego
 def inside(xy):
@@ -55,18 +55,18 @@ def move():
 
     #Actuliza la posicion de los objetivos
     for target in targets:
-        target.x -= 0.5
+        target.x -= 6
 
     #Revisa que la bola este en el juego y actualiza su posicion
     if inside(ball):
-        speed.y -= 0.35
+        speed.y -= 0.80
         ball.move(speed)
 
     #Crea una copia de todos los objetivos
     dupe = targets.copy()
     targets.clear()
 
-    #Checa si la bola esta tocando un objetivo
+    #Checa si la bola esta tocando un objetivo y crea la lista de los objetivos validos
     for target in dupe:
         if abs(target - ball) > 13:
             targets.append(target)
