@@ -1,5 +1,5 @@
 #Luis Angel Mendoza Castillón A00827838
-#
+#Rodrigo Rene Henriquez Paguaga A00827198
 
 #Importar librerias 
 from random import randrange
